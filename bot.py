@@ -19,12 +19,11 @@ def main():
 
     print(f"Tarefa: {execution.task_id}")
 
-
     enviar_item_unico(maestro)
     enviar_itens(maestro)
     puxa_um_item(maestro, execution)
     puxa_todos_itens(maestro, execution)
-    
+
 
 def enviar_item_unico(maestro):
     datapool = maestro.get_datapool(label="...")  # datapool label
@@ -37,6 +36,7 @@ def enviar_item_unico(maestro):
     )
     datapool.create_entry(novo_item)
 
+
 def enviar_itens(maestro):
     datapool = maestro.get_datapool(label="...")  # datapool label
 
@@ -47,11 +47,12 @@ def enviar_itens(maestro):
                 "status": f"status {item}"
             }
         )
-
         datapool.create_entry(novo_item)
+
 
 def puxa_um_item(maestro, execution):
     datapool = maestro.get_datapool(label="...")  # datapool label
+
     item = datapool.next(task_id=execution.task_id)
     if item is None:
         print("não há itens")
@@ -64,6 +65,7 @@ def puxa_um_item(maestro, execution):
           """)
 
     item.report_done()
+
 
 def puxa_todos_itens(maestro, execution):
     datapool = maestro.get_datapool(label="...")  # datapool label
@@ -79,9 +81,9 @@ def puxa_todos_itens(maestro, execution):
             {item['nome']}
             {item['status']}
             """)
-        
+
         item.report_done()
-        
+
 
 if __name__ == '__main__':
     main()
