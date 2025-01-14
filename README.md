@@ -33,6 +33,7 @@ Para rodar este projeto, você precisará dos seguintes itens:
         - `nome` (string)
         - `status` (string)
     - (restante dos campos preenchidos conforme quiser)
+- ID de uma tarefa criada, com status `Aguardando`
 
 ### Crie e ative um ambiente virtual
 
