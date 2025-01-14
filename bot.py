@@ -13,7 +13,7 @@ def main():
         login="...", 
         key="..."
     )
-    # numero de uma tarefa em aguardo
+    # ID de uma tarefa em aguardo
     execution = maestro.get_execution("...")
     execution.task_id = "..."
 
